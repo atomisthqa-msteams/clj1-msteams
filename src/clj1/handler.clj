@@ -14,6 +14,7 @@
   {:pizza :pie
    :with :mushrooms
    :requires :mozzarella
+   :wrong :pineapple
    :and :onions})
 
 (def app
