@@ -13,6 +13,7 @@
 (defn get-pizza []
   {:pizza :pie
    :with :mushrooms
+   :requires :mozzarella
    :and :onions})
 
 (def app
