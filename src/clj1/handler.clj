@@ -13,7 +13,9 @@
 (defn get-pizza []
   {:pizza :pie
    :with :mushrooms
+   :and :onions
   }) 
+
 (defn get1 [] 1)
 (defn get2 [] 2)
 
