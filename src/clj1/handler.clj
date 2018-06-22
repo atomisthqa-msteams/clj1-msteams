@@ -13,10 +13,7 @@
 (defn get-pizza []
   {:pizza :pie
    :with :mushrooms
-   :requires :mozzarella
-   :wrong :pineapple
-   :and :onions})
-
+  }) 
 (defn get1 [] 1)
 (defn get2 [] 2)
 
