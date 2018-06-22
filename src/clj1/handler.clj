@@ -17,6 +17,9 @@
    :wrong :pineapple
    :and :onions})
 
+(defn get1 [] 1)
+(defn get2 [] 2)
+
 (def app
   (api
    {:swagger
