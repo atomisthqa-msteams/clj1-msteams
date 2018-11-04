@@ -26,4 +26,6 @@
               :metajar {:direct-linking true
                         :aot :all
                         :source-paths   ["env/prod/clj"]
-                        :resource-paths ["env/prod/resources"]}})
+                        :resource-paths ["env/prod/resources"]}}
+   :aliases {"deploy" ["help"]})
+
