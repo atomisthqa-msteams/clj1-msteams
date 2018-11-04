@@ -1,0 +1,46 @@
+#!/bin/bash
+# restore cached Maven home directory cache, ignoring failures
+
+declare Pkg=restore-maven-repository
+declare Version=0.1.0
+
+# print message to stdout
+# usage: msg MESSAGE
+function msg () {
+    echo "$Pkg: $*"
+}
+
+# print message to stderr
+# usage err MESSAGE
+function err () {
+    msg "$*" 1>&2
+}
+
+# usage: main "$@"
+function main () {
+    local maven=$HOME/.m2
+    if ! mkdir -p "$maven"; then
+        err "failed to ensure '$maven' directory exists"
+        return 0
+    fi
+
+    local cache=/opt/data/$ATOMIST_OWNER/$ATOMIST_REPO
+    local file=$cache/maven-repository.tar.gz
+    if [[ ! -f $file ]]; then
+        msg "no local Maven repository in cache: $file"
+        return 0
+    fi
+
+    msg "restoring local Maven repository from cache"
+    if ! tar -x -z -f "$file" -C "$maven"; then
+        err "failed to extract cache '$file' to '$maven', retrying"
+        if ! tar -x -z -f "$file" -C "$maven"; then
+            err "failed to extract cache '$file' to '$maven' again, removing offending cache file"
+            rm -f "$file"
+        fi
+    fi
+    return 0
+}
+
+main "$@" || exit 1
+exit 0
