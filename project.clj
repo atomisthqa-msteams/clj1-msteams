@@ -29,15 +29,3 @@
                         :resource-paths ["env/prod/resources"]}}
    :aliases {"deploy" ["help"]})
 
-
-
-
-
-
-
-
-
-
-
-
-
