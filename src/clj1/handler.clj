@@ -16,7 +16,7 @@
    :and :onions})
 
 (defn get1 [] 5)
-(defn get2 [] 4)
+(defn get2 [] 6)
 
 (def app
   (api
