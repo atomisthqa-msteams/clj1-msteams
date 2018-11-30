@@ -15,7 +15,7 @@
    :with :mushrooms
    :and :onions})
 
-(defn get1 [] 5)
+(defn get1 [] 7)
 (defn get2 [] 6)
 
 (def app
