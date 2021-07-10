@@ -33,7 +33,7 @@
      (GET "/plus" []
        :return {:result Long}
        :query-params [x :- Long, y :- Long]
-       :summary "adds two numbers together"
+       :summary "adds two numbers together quickly"
        (ok {:result (+ x y)}))
 
      (POST "/echo" []
